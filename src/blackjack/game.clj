@@ -36,3 +36,14 @@
 (defn player-decision-continue? [player]
   (println (:player-name player) ": mais carta?")
   (= (read-line) "sim"))
+
+(defn dealer-decision-continue? [player-points dealer]
+  (let [dealer-points (:points dealer)]
+    (if (> player-points 21) false (<= dealer-points player-points))))
+
+(defn game [player fn-decision-continue?]
+  (if (fn-decision-continue? player)
+    (let [player-with-more-cards (more-card player)]
+      (card/print-player player-with-more-cards)
+      (recur player-with-more-cards fn-decision-continue?))
+    player))
