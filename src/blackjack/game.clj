@@ -25,3 +25,14 @@
     {:player-name player-name
      :cards       cards
      :points      points}))    
+
+(defn more-card [player]
+  (let [card (new-card)
+        cards (conj (:cards player) card)
+        new-player (update player :cards conj card)
+        points (points-cards cards)]
+    (assoc new-player :points points)))
+
+(defn player-decision-continue? [player]
+  (println (:player-name player) ": mais carta?")
+  (= (read-line) "sim"))
