@@ -47,3 +47,31 @@
       (card/print-player player-with-more-cards)
       (recur player-with-more-cards fn-decision-continue?))
     player))
+
+(defn end-game [player dealer]
+  (let [player-points (:points player)
+        dealer-points (:points dealer)
+        player-name (:player-name player)
+        dealer-name (:player-name dealer)
+        message (cond
+                  (and (> player-points 21) (> dealer-points 21)) "Ambos perderam"
+                  (= player-points dealer-points) "empatou"
+                  (> player-points 21) (str dealer-name " ganhou")
+                  (> dealer-points 21) (str player-name " ganhou")
+                  (> player-points dealer-points) (str player-name " ganhou")
+                  (> dealer-points player-points) (str dealer-name " ganhou"))]
+    (card/print-player player)
+    (card/print-player dealer)
+    (print message)))
+
+(def player-1 (player "Cesar"))
+(card/print-player player-1)
+
+(def dealer (player "Dealer"))
+(card/print-masked-player dealer)
+
+(def player-after-game (game player-1 player-decision-continue?))
+(def partial-dealer-decision-continue? (partial dealer-decision-continue? (:points player-after-game)))
+(def dealer-after-game (game dealer partial-dealer-decision-continue?))
+
+(end-game player-after-game dealer-after-game)
