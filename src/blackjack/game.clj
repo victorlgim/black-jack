@@ -1,4 +1,6 @@
-(ns blackjack.game)
+(ns blackjack.game
+  (:require [card-ascii-art.core :as card])
+  )
 
 (defn new-card []
   "Gerando cartas com números entre 1 à 13"
