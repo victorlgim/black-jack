@@ -1,66 +1,68 @@
-# Projeto Black Jack em Clojure
+# Black Jack Project in Clojure
 
-Este é um projeto de Black Jack desenvolvido em Clojure, utilizando o Leiningen como gerenciador de dependências e build tool. O objetivo deste jogo é simular a dinâmica do popular jogo de cartas conhecido como Black Jack ou Vinte e Um.
+This is a Black Jack project developed in Clojure, using Leiningen as a dependency manager and build tool. The goal of this game is to simulate the dynamics of the popular card game known as Black Jack or Twenty-One.
 
-## Pré-requisitos
+## Prerequisites
 
-Antes de executar o projeto, é necessário ter as seguintes ferramentas instaladas:
+Before running the project, ensure you have the following tools installed:
 
 - [Clojure](https://clojure.org/guides/getting_started)
 - [Leiningen](https://leiningen.org/)
 
-## Instalação
+## Installation
 
-Siga os passos abaixo para executar o projeto:
+Follow these steps to run the project:
 
-1. Clone este repositório para o seu ambiente local:
+1. Clone this repository to your local environment:
 
    ```shell
    git clone https://github.com/victorlgim/black_jack.git
+   ```
    
-2. Acesse o diretório do projeto:
+2. Navigate to the project directory:
 
    ```shell
-   cd black_jack 
+   cd black_jack
+   ```
    
-3. Instale as dependências do projeto utilizando o Leiningen:
+3. Install project dependencies using Leiningen:
 
    ```shell
-   lein deps    
-   
-## Como jogar?
-  
-  Após a instalação e a configuração do ambiente, você pode executar o jogo usando o seguinte comando:
-  
-     ```shell
-     lein run   
-  
-O jogo será iniciado e você poderá interagir através do terminal.
+   lein deps
+   ```
 
-## Regras do Jogo
+## How to Play?
 
-O Black Jack é um jogo de cartas jogado entre um jogador e um dealer (representado pelo computador). O objetivo do jogo é obter uma mão de cartas com um valor o mais próximo possível de 21, sem ultrapassá-lo.
+After installation and environment setup, you can start the game using the following command:
 
-<h2>Valor das Cartas</h2>
-<ul>
-<ul>
-  <li>As cartas numéricas (2 a 10) possuem o valor equivalente ao seu número.</li>
-  <li>As cartas J, Q e K valem 10 pontos cada.</li>
-  <li>O Ás (A) pode valer 1 ou 11 pontos, dependendo da situação.</li>
-</ul>
-</ul>
+   ```shell
+   lein run
+   ```
 
-## Dinâmica do Jogo
+The game will start, and you can interact through the terminal.
 
-<ol>
-  <li>O jogador faz uma aposta.</li>
-  <li>O jogador e o dealer recebem duas cartas cada, sendo que uma das cartas do dealer fica oculta.</li>
-  <li>O jogador decide se deseja receber mais cartas (hit) ou parar (stand).</li>
-  <li>Se o jogador ultrapassar 21 pontos, ele perde automaticamente (bust).</li>
-  <li>Se o jogador para, o dealer revela sua carta oculta e decide se deve receber mais cartas ou parar.</li>
-  <li>O dealer deve parar quando atingir 17 pontos ou mais.</li>
-  <li>Se o dealer ultrapassar 21 pontos, o jogador ganha automaticamente.</li>
-  <li>Se nenhum dos jogadores ultrapassar 21 pontos, a mão com o valor mais próximo de 21 ganha.</li>
-  <li>O jogo permite apostas e placar, mantendo o histórico das partidas.</li>
-</ol>
+## Game Rules
 
+Black Jack is a card game played between a player and a dealer (represented by the computer). The goal is to obtain a hand as close as possible to 21 points without exceeding it.
+
+### Card Values
+
+- Numbered cards (2 to 10) hold their respective values.
+- J, Q, and K cards are worth 10 points each.
+- The Ace (A) can be worth either 1 or 11 points, depending on the situation.
+
+## Game Flow
+
+1. The player places a bet.
+2. The player and dealer receive two cards each, with one of the dealer's cards hidden.
+3. The player decides whether to receive more cards (hit) or stop (stand).
+4. If the player exceeds 21 points, they automatically lose (bust).
+5. If the player stops, the dealer reveals their hidden card and decides whether to hit or stand.
+6. The dealer must stand if reaching 17 points or more.
+7. If the dealer exceeds 21 points, the player wins automatically.
+8. If neither exceeds 21, the hand closest to 21 wins.
+9. The game allows bets and keeps track of the match history.
+
+## 📝 License
+
+This project is licensed. See the [LICENSE](LICENSE.md) file for more details.
